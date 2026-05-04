@@ -1,46 +1,100 @@
-# Getting Started with Create React App
+# Minimal Prediction MVP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a deliberately simple MVP.
 
-## Available Scripts
+The goal is not to build a complete system.
 
-In the project directory, you can run:
+The goal is to prove one thing:
 
-### `npm start`
+> Can we go from input → prediction → output with the least amount of complexity possible?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Why This Exists
 
-### `npm test`
+Most projects don’t fail because the idea is bad.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+They fail because nothing ever actually runs.
 
-### `npm run build`
+Instead of starting with:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- architecture
+- infrastructure
+- scaling concerns
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project starts with:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- a working loop
+- minimal logic
+- zero unnecessary abstraction
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## What This Does
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+At its core, this project is just:
+intput -> prediction -> output
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+That’s it.
 
-## Learn More
+No backend.  
+No persistence.  
+No async workflows.  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Just something that runs.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## Tests
+
+Basic tests are included to define what “working” means.
+
+They don’t try to cover everything.
+
+They simply ensure the system:
+
+- accepts valid input
+- returns a valid result
+
+This creates a stable baseline for future changes.
+
+---
+
+## Philosophy
+
+Architecture should come from pressure.
+
+Not anticipation.
+
+This project starts small on purpose.
+
+If it evolves, it will do so one layer at a time:
+
+- first: working logic
+- then: stability (tests)
+- later: extensibility (plugins)
+- eventually: real complexity (if justified)
+
+---
+
+## Running the Project
+
+```bash
+npm install
+npm start
+```
+
+## Running Tests
+
+```bash
+npm test
+```
+
+## Notes
+This is not a production system.
+
+It’s a controlled starting point.
+
+A working baseline is more valuable than a well-designed system that never runs.
+
