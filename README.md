@@ -98,3 +98,9 @@ It’s a controlled starting point.
 
 A working baseline is more valuable than a well-designed system that never runs.
 
+## Article
+
+Stop Building the Architecture of a Billion-User App for 3 Test Users
+
+https://newjerseysoftware.com/engineering/articles/stop-overengineering-mvp
+
